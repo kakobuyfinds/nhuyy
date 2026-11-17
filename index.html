@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Browse the KakoBuy spreadsheet with real CAFANS listings, estimated USD prices, and a checklist for sizing, warehouse QC, and shipping costs.">
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>KakoBuy spreadsheet | CAFANS Product Finds & Buying Guide</title>
+<!-- Indexing submission pending. Once this page has a public URL, submit it through Google Search Console URL Inspection and Bing Webmaster Tools URL Submission. -->
+<!-- Search references: spreadsheetkakobuy.com, kakobuy-spreadsheet.com/features/faq?lang=english, kakofind.net/spreadsheet/buty?lang=en. These results emphasize category filters, prices and QC. This page combines a filterable CAFANS catalog with a checklist for the exact variant and a landed-cost worksheet. -->
+<style>
+:root{color-scheme:dark;--bg:#101914;--panel:#17271e;--line:#385444;--text:#f0f8f1;--muted:#bdcec2;--accent:#c4f783}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.6 system-ui,sans-serif}
+main,footer{width:min(100% - 2rem,64rem);margin-inline:auto}
+header{text-align:center;padding:clamp(3rem,9vw,7rem) 1rem;background:radial-gradient(ellipse at top,#284638,transparent 75%)}
+h1,h2{line-height:1.12;letter-spacing:-.04em}
+h1{font-size:clamp(2.4rem,7vw,5.4rem);margin:.2em 0}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 .6rem}
+p{color:var(--muted)}
+header p{max-width:35rem;margin:1rem auto}
+a{color:var(--accent)}
+a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:1.6rem}
+.button{display:inline-block;border:1px solid var(--accent);border-radius:999px;padding:.65rem 1.15rem;text-decoration:none;font-weight:700}
+.primary{background:var(--accent);color:#132012}
+section{padding:2rem 0;border-top:1px solid var(--line)}
+.controls,.cost{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.8rem}
+label{display:block}input,select{display:block;width:100%;margin-top:.25rem;font:inherit;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:.45rem;padding:.55rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:.75rem}
+article{background:var(--panel);border:1px solid var(--line);border-radius:.8rem;padding:1rem}
+article h3{margin:.2rem 0}
+article p{margin:.2rem 0}
+small{color:var(--muted)}
+details{padding:.7rem 0;border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:650}
+footer{text-align:center;padding:1rem 0 2rem}
+</style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/nhuyy/">
+</head>
+<body>
+<header>
+  <h1>KakoBuy spreadsheet</h1>
+  <p>Compare shoes, clothing and outerwear from CAFANS. Check sizing and warehouse photos, then estimate the full cost before shipping.</p>
+  <div class="actions">
+    <a class="button primary" href="https://cafans.com">KakoBuy spreadsheet</a>
+    <a class="button" href="https://cafans.com">Buy it now</a>
+  </div>
+  <p><small>Both buttons open CAFANS. This is an independent buying guide.</small></p>
+</header>
+<main>
+  <section aria-labelledby="catalog-title">
+    <h2 id="catalog-title">CAFANS product catalog</h2>
+    <p>Selected listings from CAFANS. USD prices are estimates from the catalog snapshot. Open each listing to check its current price and options.</p>
+    <div class="controls" id="filters" hidden>
+      <label>Search products <input id="query" type="search" placeholder="Try slides or sweatshirt"></label>
+      <label>Category <select id="category"><option value="">All categories</option><option>Shoes</option><option>Hoodies &amp; Sweaters</option><option>T-Shirts</option><option>Jackets</option></select></label>
+    </div>
+    <p id="matches" role="status"></p>
+    <div class="grid">
+      <article data-category="Shoes"><small>Shoes</small><h3><a href="https://cafans.com/goods-158791.html">Leather Slides</a></h3><p>$62.36 USD</p></article>
+      <article data-category="Shoes"><small>Shoes</small><h3><a href="https://cafans.com/goods-158790.html">Platform Slides</a></h3><p>$46.67 USD</p></article>
+      <article data-category="Hoodies &amp; Sweaters"><small>Hoodies &amp; Sweaters</small><h3><a href="https://cafans.com/goods-158792.html">Sweatshirt</a></h3><p>$27.50 USD</p></article>
+      <article data-category="T-Shirts"><small>T-Shirts</small><h3><a href="https://cafans.com/goods-158200.html">Unisex Embroidered Oversized T-Shirt</a></h3><p>$32.64 USD</p></article>
+      <article data-category="T-Shirts"><small>T-Shirts</small><h3><a href="https://cafans.com/goods-158110.html">Unisex T-Shirt</a></h3><p>$29.72 USD</p></article>
+      <article data-category="Jackets"><small>Jackets</small><h3><a href="https://cafans.com/goods-158222.html">Jacket</a></h3><p>$84.54 USD</p></article>
+    </div>
+  </section>
+  <section aria-labelledby="qc-title">
+    <h2 id="qc-title">Before approving warehouse QC</h2>
+    <ol>
+      <li>Save the listing link and the exact color and size you selected. Check the return window before placing the order.</li>
+      <li>For shoes, compare measurements taken the same way on a pair you own. For tops, lay a garment flat and compare chest width, body length and sleeve length in centimeters.</li>
+      <li>When warehouse photos are available, match the label and color to your order. Ask for a ruler photo if a measurement is unclear, and check the areas you expect to wear hardest, such as outsoles, seams or zippers.</li>
+    </ol>
+  </section>
+  <section aria-labelledby="cost-title">
+    <h2 id="cost-title">Estimate the total in USD</h2>
+    <p>Add the item, local delivery and agent fees, international shipping, and any applicable taxes or duties. Use one currency for all figures and check which charges your shipping quote already includes.</p>
+    <form id="cost" hidden>
+      <div class="cost">
+        <label>Items <input type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label>Local delivery and fees <input type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label>International shipping <input type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label>Taxes and duties <input type="number" min="0" step="0.01" inputmode="decimal"></label>
+      </div>
+      <p>Estimated total <strong><output id="total" aria-live="polite"></output></strong></p>
+    </form>
+  </section>
+  <section aria-labelledby="faq-title">
+    <h2 id="faq-title">Frequently asked questions</h2>
+    <details><summary>What is a KakoBuy spreadsheet?</summary><p>It is a browsable list of product finds that helps you shortlist items before ordering with a shopping agent. Use the product page to verify the seller link and available variants.</p></details>
+    <details><summary>Why can shipping quotes differ for the same items?</summary><p>Carriers can price a parcel using its actual weight or a dimensional weight based on the box size. Compare quotes using the same packed dimensions, destination and included services.</p></details>
+  </section>
+</main>
+<footer><small>Catalog source <a href="https://cafans.com">CAFANS</a></small></footer>
+<script>
+const query = document.querySelector('#query');
+const category = document.querySelector('#category');
+const cards = [...document.querySelectorAll('.grid article')];
+const matches = document.querySelector('#matches');
+const filter = () => {
+  const term = query.value.trim().toLowerCase();
+  let count = 0;
+  for (const card of cards) {
+    const categoryMatches = !category.value || card.dataset.category === category.value;
+    const nameMatches = card.querySelector('h3').textContent.toLowerCase().includes(term);
+    card.hidden = !(categoryMatches && nameMatches);
+    if (!card.hidden) count++;
+  }
+  matches.textContent = count ? count + (count === 1 ? ' product' : ' products') : 'No products match. Try another search or category.';
+};
+query.addEventListener('input', filter);
+category.addEventListener('change', filter);
+document.querySelector('#filters').removeAttribute('hidden');
+filter();
+const cost = document.querySelector('#cost');
+const fields = [...cost.querySelectorAll('input')];
+const total = document.querySelector('#total');
+const dollars = new Intl.NumberFormat('en-US', {style:'currency', currency:'USD'});
+const updateCost = () => {
+  const valid = fields.every(field => field.validity.valid);
+  const amount = fields.reduce((sum, field) => sum + (field.valueAsNumber || 0), 0);
+  total.textContent = valid ? dollars.format(amount) : 'Enter valid nonnegative amounts.';
+};
+cost.addEventListener('input', updateCost);
+cost.addEventListener('submit', event => event.preventDefault());
+cost.hidden = false;
+updateCost();
+</script>
+</body>
+</html>
